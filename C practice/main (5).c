@@ -1,20 +1,21 @@
-/******************************************************************************
-
-                            Online C Compiler.
-                Code, Compile, Run and Debug C program online.
-Write your code in this editor and press "Run" button to compile and execute it.
-
-*******************************************************************************/
-
-#include <stdio.h>
-
-int main()
+#include<stdio.h>
+#include<conio.h>
+void main()
 {
-     int b = 10;
- int h = 5;
-  float ans = 0.5*b*h;
-   printf(" area of tringle is %f", ans);
-   
-
-    return 0;
+    //area of circle
+    //PI*r*r
+    
+    float PI = 3.14;
+    int r = 6;
+    
+    float ans = PI*r*r;
+    
+    printf("Area of circle is %f",ans);
+    
+    
+    
+    
+    
+    
+    getch();
 }

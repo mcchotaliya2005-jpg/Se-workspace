@@ -1,23 +1,23 @@
-/******************************************************************************
-
-                            Online C Compiler.
-                Code, Compile, Run and Debug C program online.
-Write your code in this editor and press "Run" button to compile and execute it.
-
-*******************************************************************************/
-
-#include <stdio.h>
-#include <conio.h>
-
-int main()
+#include<stdio.h>
+#include<conio.h>
+void main()
 {
- int number =5;
- int squre= number * number;
- int cube =number * number * number;
- 
- printf("\n Your squre number is %d",squre);
- printf("\n Your cube number is %d", cube);
- 
-    return 0;
+    int a = 6;
+    int b = 3;
     
+    //Arithmetic Op -> +,-,*,/,%
+    
+    int add = a + b;
+    int sub = a - b;
+    int mul = a * b;
+    int d1  =  a / b;
+    int mod = a % b;
+    
+    printf("\n Your Addition is %d",add);
+    printf("\n Your Substraction is %d",sub);
+    printf("\n Your Multiplication is %d",mul);
+    printf("\n Your Division is %d",d1);
+    printf("\n Your Modulus is %d",mod);
+    
+    getch();
 }
