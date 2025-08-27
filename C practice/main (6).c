@@ -1,19 +1,24 @@
-#include<stdio.h>
-#include<conio.h>
-void main()
+#include <stdio.h>
+#include <conio.h>
+
+int main()
 {
-    //simple intrest 
-    //I=PRN/100
+    //find simple interest = p*r*n/100
     
-    float intrest,roi=6.5;
-    int pri = 50000,n=5;
+    int p = 5000;
+    int r = 7.5;
+    int n = 5;
     
-    intrest = pri*roi*n/100;
+    float si = p*r*n/100;
     
-    printf("\n Your Intrest Amount is %f",intrest);
+    printf("\n simple interest %f", si);
     
-    int finalamount = intrest+pri;
+     float ans = p+si;
+     
+     printf(" \n final amount : %f", ans);
+     
     
-    printf("\n Your Final Amount is %d",finalamount);
-    getch();
+    
+    
+    return 0;
 }
