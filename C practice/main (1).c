@@ -1,15 +1,20 @@
-
 #include <stdio.h>
 #include <conio.h>
 
-void main()
+int main()
 {
-    printf("\n My Name is Manan Chotaliya \t Address:Rajkot");
-    printf("\n My Date Of Birth is 01-10-2005 \t");
-    printf(" \n My Age is 19");
-    
-    
+  int i ;
+  for (i=1;i<=50;i++)
+  {
+      printf("\n %d tops",i);
+  }
 
-    getch();
-    
+
+
+
+
+
+
+
+    return 0;
 }

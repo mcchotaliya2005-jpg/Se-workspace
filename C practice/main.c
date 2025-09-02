@@ -1,8 +1,21 @@
-#include<stdio.h>
-#include<conio.h>
-void main()
+#include <stdio.h>
+#include <conio.h>
+
+int main()
 {
-    printf("Hello From Tops");
-    
-    getch();
+    int i ;
+    for(i= 1;i<=10;i++)
+    {
+        printf("\n %d",i);
+        
+    }
+
+
+
+
+
+
+
+
+    return 0;
 }

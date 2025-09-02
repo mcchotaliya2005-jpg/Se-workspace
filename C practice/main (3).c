@@ -3,13 +3,20 @@
 
 int main()
 {
- int number =5;
- int squre= number * number;
- int cube =number * number * number;
- 
- printf("\n Your squre number is %d",squre);
- printf("\n Your cube number is %d", cube);
- 
+  int i=15;
+  
+  do 
+  {
+      printf("\n %d",i);
+      i++;
+  }
+   while(i<=10);
+   
+
+
+
+
+
+
     return 0;
-    
 }

@@ -3,14 +3,18 @@
 
 int main()
 {
- float PI = 3.14159;
- int r=5;
-  
- float ans = PI*r*r;
- 
- printf("area of circle is %f",ans);
- 
- 
+  int marks;
+  printf("enter marks");
+  scanf("%d",&marks);
+  do 
+  {
+      printf("pass");
+     
+  }
+  while(marks>=35);
+
+
+
+
     return 0;
-    
 }

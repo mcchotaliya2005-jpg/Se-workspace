@@ -1,12 +1,14 @@
 #include <stdio.h>
+#include <conio.h>
 
 int main()
 {
-     int b = 10;
- int h = 5;
-  float ans = 0.5*b*h;
-   printf(" area of tringle is %f", ans);
-   
+ for(int i=15;i<=10;i++)
+ {
+     printf("%d",i);
+ }
+
+
 
     return 0;
 }
