@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main() {
+    int n, i, j, num;
+
+    printf("Enter the number of rows: ");
+    scanf("%d", &n);
+
+    printf("\nPascal's Triangle (Using Loops):\n");
+
+    for (i = 0; i < n; i++) {
+        // Print spaces for formatting
+        for (int space = 0; space < n - i - 1; space++)
+            printf(" ");
+
+        num = 1;
+        for (j = 0; j <= i; j++) {
+            printf("%d ", num);
+            num = num * (i - j) / (j + 1); // formula for next element
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
