@@ -7,14 +7,32 @@ private:
     int pin;
     double balance;
 
+    // 🔹 Helper function for safe numeric input
+    double getValidAmount() {
+        double amount;
+        while (true) {
+            cin >> amount;
+
+            // If input is valid → return it
+            if (!cin.fail() && amount >= 0) {
+                return amount;
+            }
+
+            // If invalid → clear flags & ignore wrong input
+            cin.clear();
+            cin.ignore(1000, '\n');
+            cout << "Invalid input! Please enter a valid number: ";
+        }
+    }
+
 public:
     // Constructor
     ATM() {
         pin = 12345;
-        balance = 20000;  // Present Account Balance
+        balance = 20000;
     }
 
-    // Function to display welcome screen
+    // Welcome screen
     void welcomeScreen() {
         time_t now = time(0);
         char* dt = ctime(&now);
@@ -24,7 +42,7 @@ public:
         cout << "==============================" << endl;
     }
 
-    // Function to verify PIN
+    // PIN verification
     bool verifyPIN() {
         int userPin;
         cout << "\nEnter ATM PIN: ";
@@ -39,21 +57,20 @@ public:
         }
     }
 
-    // Function to deposit money
+    // Deposit money
     void deposit() {
-        double depositAmount;
         cout << "\nEnter amount to deposit: ₹";
-        cin >> depositAmount;
+        double depositAmount = getValidAmount();
+
         balance += depositAmount;
         cout << "Amount Deposited Successfully!" << endl;
         cout << "Updated Balance: ₹" << balance << endl;
     }
 
-    // Function to withdraw money
+    // Withdraw money
     void withdraw() {
-        double withdrawAmount;
         cout << "\nEnter amount to withdraw: ₹";
-        cin >> withdrawAmount;
+        double withdrawAmount = getValidAmount();
 
         if (withdrawAmount > balance) {
             cout << "Unsuccessful Withdrawal! Insufficient Balance." << endl;
@@ -64,26 +81,24 @@ public:
         }
     }
 
-    // Function to check balance
+    // Check balance
     void checkBalance() {
         cout << "\nYour Current Balance: ₹" << balance << endl;
     }
 
-    // Help Screen
+    // Help screen
     void helpScreen() {
         cout << "\n========= HELP SCREEN =========" << endl;
-        cout << "1. Use your ATM PIN (12345) to log in." << endl;
+        cout << "1. Use ATM PIN (12345) to login." << endl;
         cout << "2. Deposit money to add funds." << endl;
-        cout << "3. Withdraw money if balance is available." << endl;
+        cout << "3. Withdraw money if balance is sufficient." << endl;
         cout << "4. Check balance anytime." << endl;
-        cout << "5. Exit to end the session." << endl;
+        cout << "5. Exit to end session." << endl;
         cout << "===============================" << endl;
     }
 };
 
-// Scope Resolution Operator Example
-void displayMenu();
-
+// Menu Function
 void displayMenu() {
     cout << "\n===== MAIN MENU =====" << endl;
     cout << "1. Deposit Money" << endl;
@@ -107,6 +122,14 @@ int main() {
         displayMenu();
         cout << "\nEnter your choice: ";
         cin >> choice;
+
+        // Validate numeric menu choice
+        if (cin.fail()) {
+            cin.clear();
+            cin.ignore(1000, '\n');
+            cout << "Invalid Choice! Enter number only." << endl;
+            continue;
+        }
 
         switch (choice) {
             case 1:
